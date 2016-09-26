@@ -5,8 +5,8 @@ public class Player {
 	private Number position;
 	private Number attr;
 	
-	public Player(Number id, Number attribute) {
-		this.setId(id);
+	public Player(Number position, Number attribute) {
+		this.position = position;
 		this.attr = attribute;
 	}
 

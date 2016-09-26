@@ -1,32 +1,42 @@
 package simulacion;
 
 public class Score {
-	private Number team1;
-	private Number team2;
+	private Team team1;
+	private Team team2;
 	
-	public Score() {
-		this.team1 = 0;
-		this.team2 = 0;
-	}
+	private Number team1Goals;
+	private Number team2Goals;
 	
-	public Number getTeam1() {
-		return team1;
-	}
-	public void setTeam1(Number team1) {
+	public Score(Team team1, Team team2) {
 		this.team1 = team1;
-	}
-	public Number getTeam2() {
-		return team2;
-	}
-	public void setTeam2(Number team2) {
 		this.team2 = team2;
+		this.team1Goals = 0;
+		this.team2Goals = 0;
 	}
 	
-	public void addGoal(Number team) {
-		if (team.intValue() == 1) {
-			this.setTeam1(getTeam1().intValue() + 1);
+	public void addGoal(Team team) {
+		if (team == this.team1) {
+			this.setTeam1Goals(this.getTeam1Goals().intValue() + 1);
+		} else if (team == this.team2) {
+			this.setTeam2Goals(this.getTeam2Goals().intValue() + 1);
 		} else {
-			this.setTeam2(getTeam2().intValue() + 1);
+			System.out.println("ERROR ON TEAM");
 		}
+	}
+
+	public Number getTeam1Goals() {
+		return team1Goals;
+	}
+
+	public void setTeam1Goals(Number team1Goals) {
+		this.team1Goals = team1Goals;
+	}
+
+	public Number getTeam2Goals() {
+		return team2Goals;
+	}
+
+	public void setTeam2Goals(Number team2Goals) {
+		this.team2Goals = team2Goals;
 	}
 }
